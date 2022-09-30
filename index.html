@@ -309,6 +309,16 @@ section{
         document.getElementById('p5').style.display='none'
         document.getElementById('check').click()
         })
+       
+       document.getElementById('bt5').addEventListener('click',()=>{
+          event.preventDefault()
+        document.getElementById('p5').style.display='block'
+        document.getElementById('p4').style.display='none'
+        document.getElementById('p3').style.display='none'
+        document.getElementById('p2').style.display='none'
+        document.getElementById('p1').style.display='none'
+        document.getElementById('check').click()
+        })
       </script>
        <script>
       $('body').append('<div style="" id="loadingDiv"><div class="loader">กำลังโหลดกรุณารอสักครู่.....</div>');
@@ -316,7 +326,7 @@ $(window).on('load', function(){
   setTimeout(removeLoader, 1000); //wait for page load PLUS two seconds.
 });
 function removeLoader(){
-    $( "#loadingDiv" ).fadeOut(100, function() {
+    $( "#loadingDiv" ).fadeOut(200, function() {
       // fadeOut complete. Remove the loading div
       $( "#loadingDiv" ).remove(); //makes page more lightweight 
   });  
