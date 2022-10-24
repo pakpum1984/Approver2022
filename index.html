@@ -154,7 +154,7 @@ span {
 	margin: auto;
 	padding-top: 20px;
 	text-align: center;
-	font-size: 30px;
+	font-size: 16px;
 }
  #loading {
   width: 100vw;
@@ -190,8 +190,10 @@ span {
 <br>
  <br>    <img src="1488.gif" alt="Loading..." width="40px" height="40px" />
    <br>
-   <br>
-<br>
+   <div id="clock">
+	<span id="seconds">11</span>
+</div>
+
  <p style="font-size:14px; color: #000000;">&nbspกำลังโหลดข้อมูลกรุณารอสักครุ่.....</p>
 </div>
       <nav class="fixed-top">
@@ -321,8 +323,8 @@ span {
 //         document.getElementById('click').click()
 //         })
       </script>
-<!--       <script>
-             timeLeft = 14;
+      <script>
+             timeLeft = 11;
       function countdown() {
 	      timeLeft--;
 	      document.getElementById("seconds").innerHTML = String( timeLeft );
@@ -331,7 +333,7 @@ span {
 	        }
           };
          setTimeout(countdown, 1000);
-     </script> -->
+     </script> 
      <script>
             $(window).load(function() {
             $('#loading').hide();
