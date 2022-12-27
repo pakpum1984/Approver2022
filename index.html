@@ -49,8 +49,8 @@
   }
 
   h1 {
-    font-size: 35px;
-    font-weight: bold;
+    font-size: 30px;
+    //font-weight: bold;
     word-break: break-all;
     color: #fff;
     text-shadow: 3px 3px 5px #000000;
@@ -81,7 +81,7 @@
   }
 
   /* Content */
-  .content {
+  #content {
     background-color: white;
     padding: 13px;
     text-align: center;
@@ -155,57 +155,74 @@
     display: table-cell;
     vertical-align: middle;
   }
-
+  .card{
+      background-color:rgba(255,255,255,0);
+      backdrop-filter: blur(100px);
+      padding: 20px;
+      height: 550px;
+      max-width: 650px;
+      text-align: center;
+      //justify-content:center;
+      margin: 40px auto;
+       border-radius: 10px;
+       border: 1px solid #fff;
+      //box-shadow: 10px 10px 15px rgb(193, 182, 182), -6px -6px 15px #eee;
+     }
  
 </style>
 
 <body>
-
-
-  <!-- MAIN (Center website) -->
-  <div class="container">
-   
-
+  
+  <div class="card">
 <br>
     <center>
-      <h1>ระบบอนุมัติ</h1>
+      <h1>Approve</h1>
     </center>
-    <hr style="color: #fff;">
 
     <div class="row">
-      <div class="col-12 col-md-6 mb-4">
-        <div class="content" data-bs-toggle="modal" data-bs-target="#myModal1">
-          <h3>หน้าอนุมัติ</h3>
+     <div class="d-flex justify-content-center mt-4">
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal1">หน้าอนุมัติ</button>
+        <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal1">
+          <h3>หน้าอนุมัติ</h3> -->
         </div>
-      </div>
+   <br>  
    
-      <div class="col-12 col-md-6 mb-4">
-        <div class="content" data-bs-toggle="modal" data-bs-target="#myModal2">
-          <h3>ฟอร์มจองรถ</h3>
+      <div class="d-flex justify-content-center mt-4">
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal2">ฟอร์มจองรถ</button>
+        <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal2">
+          <h3>ฟอร์มจองรถ</h3> -->
         </div>
-      </div>
-      <div class="col-12 col-md-6 mb-4">
-        <div class="content" data-bs-toggle="modal" data-bs-target="#myModal3">
-          <h3>คิวที่อนุมัติแล้ว</h3>
+   <br>
+      <div class="d-flex justify-content-center mt-4">
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal3">คิวที่อนุมัติแล้ว</button>
+        <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal3">
+          <h3>คิวที่อนุมัติแล้ว</h3> -->
         </div>
-      </div>
-     
+      
+     <br>
 
-      <div class="col-12 col-md-6 mb-4">
-        <div class="content" data-bs-toggle="modal" data-bs-target="#myModal4">
-          <h3>ยกเลิกจองรถ</h3>
+      <div class="d-flex justify-content-center mt-4">
+         <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal4">ยกเลิกจองรถ</button>
+        <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal4">
+          <h3>ยกเลิกจองรถ</h3> -->
         </div>
-      </div>
-      <div class=" col-12 col-md-12 mb-4">
-        <div class="content" data-bs-toggle="modal" data-bs-target="#myModal5">
-          <h3>สรุปการใช้งานรถ</h3>
+     <br>
+     <div class="d-flex justify-content-center mt-4">
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal5">สรุปการใช้งานรถ</button>
+        <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal5">
+          <h3>สรุปการใช้งานรถ</h3> -->
         </div>
-      </div>
+</div>    
 </div>
 
- <hr style="color: #fff;">
-	  
-	  
+     
+
+        
+    
+    
+
+
+ 
  <!-- The Modal -->
     <div class="modal" id="myModal1">
       <div class="modal-dialog modal-fullscreen">
@@ -325,7 +342,7 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title">&nbspสรปการใช้งานรถ</h4>
+            <h4 class="modal-title">&nbspสรุปการใช้งานรถ</h4>
             <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
           </div>
 
