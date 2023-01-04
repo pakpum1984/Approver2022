@@ -32,24 +32,26 @@
 
     font-family: Prompt;
     background-color: #4e6cef;
-     background: url("https://images.pexels.com/photos/1657378/pexels-photo-1657378.jpeg?auto=compress&cs=tinysrgb&w=600") fixed;
-  /*background-repeat: no-repeat;
+    background: url("https://images.pexels.com/photos/1657378/pexels-photo-1657378.jpeg?auto=compress&cs=tinysrgb&w=600") fixed;
+    /*background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%; */
   }
- .card{
-      background-color:rgba(255,255,255,0);
-      backdrop-filter: blur(15px);
-      padding: 20px;
-      height: 530px;
-      max-width: 650px;
-      text-align: center;
-      //justify-content:center;
-      margin: 40px auto;
-       border-radius: 10px;
-       border: 1px solid #fff;
-      //box-shadow: 10px 10px 15px rgb(193, 182, 182), -6px -6px 15px #eee;
-     }
+
+  .card {
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    height: 530px;
+    max-width: 650px;
+    text-align: center;
+    //justify-content:center;
+    margin: 40px auto;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    //box-shadow: 10px 10px 15px rgb(193, 182, 182), -6px -6px 15px #eee;
+  }
+
   /* Center website */
   .container {
     max-width: 1000px;
@@ -103,8 +105,8 @@
     color: blue;
     border: solid black;
     box-shadow: 7px 7px 15px #000000;
-   font-weight: bold;
-    
+    font-weight: bold;
+
   }
 
   /* Responsive layout - makes a two column-layout instead of four columns */
@@ -133,7 +135,7 @@
     font-size: 20px;
   }
 
- 
+
 
   .modal-body {
     display: flex;
@@ -167,215 +169,266 @@
     display: table-cell;
     vertical-align: middle;
   }
- 
- 
 </style>
 
 <body>
-  
+
   <div class="card">
-<br>
-    <center>
+    
+     <center>
       <h1>Approve</h1>
     </center>
-
-    <div class="row">
-     <div class="d-flex justify-content-center mt-4">
-        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal1">หน้าอนุมัติ</button>
+   
+   <div class="row">
+      
+      <center>
+     <span id="datenew" class="datenew px-3" style="color:white" onload="datenew()"></span>
+<!--      <span id="MyClockDisplay" class="clock  px-3" style="color:white" onload="showTime()"></span> -->
+  </center>
+      
+      <div class="d-flex justify-content-center mt-4">
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white"
+          data-bs-toggle="modal" data-bs-target="#myModal1">หน้าอนุมัติ</button>
         <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal1">
           <h3>หน้าอนุมัติ</h3> -->
-        </div>
-   <br>  
-   
+      </div>
+      <br>
+
       <div class="d-flex justify-content-center mt-4">
-        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal2">ฟอร์มจองรถ</button>
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white"
+          data-bs-toggle="modal" data-bs-target="#myModal2">ฟอร์มจองรถ</button>
         <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal2">
           <h3>ฟอร์มจองรถ</h3> -->
-        </div>
-   <br>
+      </div>
+      <br>
       <div class="d-flex justify-content-center mt-4">
-        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal3">คิวที่อนุมัติแล้ว</button>
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white"
+          data-bs-toggle="modal" data-bs-target="#myModal3">คิวที่อนุมัติแล้ว</button>
         <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal3">
           <h3>คิวที่อนุมัติแล้ว</h3> -->
-        </div>
-      
-     <br>
+      </div>
+
+      <br>
 
       <div class="d-flex justify-content-center mt-4">
-         <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal4">ยกเลิกจองรถ</button>
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white"
+          data-bs-toggle="modal" data-bs-target="#myModal4">ยกเลิกจองรถ</button>
         <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal4">
           <h3>ยกเลิกจองรถ</h3> -->
-        </div>
-     <br>
-     <div class="d-flex justify-content-center mt-4">
-        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white" data-bs-toggle="modal" data-bs-target="#myModal5">สรุปการใช้งานรถ</button>
+      </div>
+      <br>
+      <div class="d-flex justify-content-center mt-4">
+        <button type="button" style="font-size:22px; color:black;" class="btn btn-outline-light  col-12 text-white"
+          data-bs-toggle="modal" data-bs-target="#myModal5">สรุปการใช้งานรถ</button>
         <!-- <div class="content" data-bs-toggle="modal" data-bs-target="#myModal5">
           <h3>สรุปการใช้งานรถ</h3> -->
+      </div>
+    </div>
+
+    <center>
+      <p style="font-size:10px;color:#fff;">
+        <i class="far fa-copyright" style="color:#fff;"></i> 2022 พัฒนาโดย นาย ภาคภูมิ เรือนมูล ร่วมกับ นาย ธีรพงศ์
+        พรหมวัง แผนก ไอที
+      </p>
+    </center>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal1">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">&nbsp&nbspหน้าอนุมัติ</h4>
+          <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
         </div>
-</div> 
-	  
-	  <center><p style="font-size:10px;color:#fff;">
-         <i class="far fa-copyright" style="color:#fff;"></i> 2022 พัฒนาโดย นาย ภาคภูมิ เรือนมูล ร่วมกับ นาย ธีรพงศ์ พรหมวัง แผนก ไอที 
-        </p></center>
-	  
-</div>
 
-     
+        <!-- Modal body -->
+        <div class="modal-body">
 
-        
-    
-    
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            src="https://script.google.com/macros/s/AKfycbxYHoN43YH-zc0yFHvxxcisd4NeZ3gD9CjkRPOP9Q8Rh_tj_h2PKqstBicJ1l9d4t6F/exec">
+          </iframe>
+        </div>
 
-
- 
- <!-- The Modal -->
-    <div class="modal" id="myModal1">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">&nbsp&nbspหน้าอนุมัติ</h4>
-            <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-           
-            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              src="https://script.google.com/macros/s/AKfycbxYHoN43YH-zc0yFHvxxcisd4NeZ3gD9CjkRPOP9Q8Rh_tj_h2PKqstBicJ1l9d4t6F/exec">
-            </iframe>
-          </div>
-
-          <!-- Modal footer -->
-<!--           <div class="modal-footer">
+        <!-- Modal footer -->
+        <!--           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div> -->
 
-        </div>
       </div>
     </div>
-    <!-- The Modal -->
-    <div class="modal" id="myModal2">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
+  </div>
+  <!-- The Modal -->
+  <div class="modal" id="myModal2">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
 
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">&nbsp&nbspระบบจองรถ</h4>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">&nbsp&nbspระบบจองรถ</h4>
           <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
-          </div>
+        </div>
 
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div id="loading"><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-              <div class="spinner-border text-primary" style="width: 2.5rem; height: 2.5rem;"></div>
-            </div>
-            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              src="https://script.google.com/macros/s/AKfycbzNFwnN_EHGGdDPtKcdHabj2qbQcSbdbpQ42pOeM_HOCVwoAeWsHbFADY0mqccsKHLoDg/exec">
-            </iframe>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div id="loading"><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="spinner-border text-primary" style="width: 2.5rem; height: 2.5rem;"></div>
           </div>
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            src="https://script.google.com/macros/s/AKfycbzNFwnN_EHGGdDPtKcdHabj2qbQcSbdbpQ42pOeM_HOCVwoAeWsHbFADY0mqccsKHLoDg/exec">
+          </iframe>
+        </div>
 
-          <!-- Modal footer -->
-<!--           <div class="modal-footer">
+        <!-- Modal footer -->
+        <!--           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div> -->
 
-        </div>
       </div>
     </div>
+  </div>
 
-    <!-- The Modal -->
-    <div class="modal" id="myModal3">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
+  <!-- The Modal -->
+  <div class="modal" id="myModal3">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
 
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">&nbspคิวที่อนุมัติแล้ว</h4>
-           <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              src="https://script.google.com/macros/s/AKfycbxzRdbcKytZ0wR30BmElrZE_5RbNss4RwVFZ30-v1mZe2jznNzQ-aqYnA41-m7jozZw5w/exec">
-            </iframe>
-          </div>
-
-          <!-- Modal footer -->
-          <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div> -->
-
-        </div>
-      </div>
-    </div>
-
-
-    <!-- The Modal -->
-    <div class="modal" id="myModal4">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">&nbspยกเลิกจองรถ</h4>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">&nbspคิวที่อนุมัติแล้ว</h4>
           <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
-          </div>
+        </div>
 
-          <!-- Modal body -->
-          <div class="modal-body">
-            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              src="https://script.google.com/macros/s/AKfycbwnC8ybuX7GYp5SYoCstMCEVeMg8IsYAZGsscU6UVmyOhub7DX0M9p5jc86NYzVviLZzw/exec">
-            </iframe>
-          </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            src="https://script.google.com/macros/s/AKfycbxzRdbcKytZ0wR30BmElrZE_5RbNss4RwVFZ30-v1mZe2jznNzQ-aqYnA41-m7jozZw5w/exec">
+          </iframe>
+        </div>
 
-          <!-- Modal footer -->
-          <!-- <div class="modal-footer">
+        <!-- Modal footer -->
+        <!-- <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div> -->
 
-        </div>
       </div>
     </div>
+  </div>
 
-    <!-- The Modal -->
-    <div class="modal" id="myModal5">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
 
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">&nbspสรุปการใช้งานรถ</h4>
-            <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
-          </div>
+  <!-- The Modal -->
+  <div class="modal" id="myModal4">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
 
-          <!-- Modal body -->
-          <div class="modal-body">
-            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              src="https://script.google.com/macros/s/AKfycbw1DI_Ya9olzVLbwrY8S-b3T5f_aY7yuUDsA_uGQuYarA1CwSv4XqqRBVTmRqRR8Qgo/exec">
-            </iframe>
-          </div>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">&nbspยกเลิกจองรถ</h4>
+          <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
+        </div>
 
-          <!-- Modal footer -->
-          <!-- <div class="modal-footer">
+        <!-- Modal body -->
+        <div class="modal-body">
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            src="https://script.google.com/macros/s/AKfycbwnC8ybuX7GYp5SYoCstMCEVeMg8IsYAZGsscU6UVmyOhub7DX0M9p5jc86NYzVviLZzw/exec">
+          </iframe>
+        </div>
+
+        <!-- Modal footer -->
+        <!-- <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div> -->
 
-        </div>
       </div>
     </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal5">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">&nbspสรุปการใช้งานรถ</h4>
+          <button type="button" class="btn-close" id="99" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            src="https://script.google.com/macros/s/AKfycbw1DI_Ya9olzVLbwrY8S-b3T5f_aY7yuUDsA_uGQuYarA1CwSv4XqqRBVTmRqRR8Qgo/exec">
+          </iframe>
+        </div>
+
+        <!-- Modal footer -->
+        <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div> -->
+
+      </div>
+    </div>
+  </div>
 
 
-   
 
-    <script>
-      $(window).load(function () {
-        $('#loading').hide();
-      });
-    </script>
 
+  <script>
+    $(window).load(function () {
+      $('#loading').hide();
+    });
+  </script>
+<script>
+/** ส่วนของวันที่นำไปแสดงคู่นาฬิกาดิจิตอล */
+datenew(); 
+function datenew(){
+      var now = new Date();
+      var thday = new Array ("อาทิตย์","จันทร์",
+      "อังคาร","พุธ","พฤหัส","ศุกร์","เสาร์");
+      var thmonth = new Array ("มกราคม","กุมภาพันธ์","มีนาคม",
+      "เมษายน","พฤษภาคม","มิถุนายน", "กรกฎาคม","สิงหาคม","กันยายน",
+      "ตุลาคม","พฤศจิกายน","ธันวาคม");
+
+      var datenew = "วัน" + thday[now.getDay()]+ "ที่ "+ now.getDate()+ " " +
+      thmonth[now.getMonth()]+ " " + (now.getFullYear()+543);
+      document.getElementById("datenew").innerText = datenew;
+      document.getElementById("datenew").textContent = datenew;
+      }
+showTime();  
+/** จาวาสคริปต์ นาฬิกาดิจิตอล ### Ref.  https://codepen.io/afarrar/pen/JRaEjP ### **/      
+      function showTime() {
+        var date = new Date();
+        var h = date.getHours(); // 0 - 23
+        var m = date.getMinutes(); // 0 - 59
+        var s = date.getSeconds(); // 0 - 59
+        var dot =document.textContent = '.';
+
+        if(s%2 == 1){
+          dot = document.textContent = '.';
+        }else{
+          dot = document.textContent = '\xa0';
+        }
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        //var time = h + ":" + m + ":" + s + " " + session;
+        var time = h + ":" + m + ":" + s + '' +dot;
+        document.getElementById("MyClockDisplay").innerText = time;
+        document.getElementById("MyClockDisplay").textContent = time;
+        setTimeout(showTime, 1000);
+      }          
+ </script>	
 
 </body>
 
