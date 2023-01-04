@@ -183,7 +183,7 @@
       
       <center>
      <span id="datenew" class="datenew px-3" style="color:white" onload="datenew()"></span>
-<!--      <span id="MyClockDisplay" class="clock  px-3" style="color:white" onload="showTime()"></span> -->
+     <span id="MyClockDisplay" class="clock  px-3" style="color:white" onload="showTime()"></span>
   </center>
       
       <div class="d-flex justify-content-center mt-4">
@@ -400,7 +400,7 @@ function datenew(){
       "เมษายน","พฤษภาคม","มิถุนายน", "กรกฎาคม","สิงหาคม","กันยายน",
       "ตุลาคม","พฤศจิกายน","ธันวาคม");
 
-      var datenew = "วัน" + thday[now.getDay()]+ "ที่ "+ now.getDate()+ " " +
+      var datenew = "สวัสดี วัน" + thday[now.getDay()]+ " ที่ "+ now.getDate()+ " " +
       thmonth[now.getMonth()]+ " " + (now.getFullYear()+543);
       document.getElementById("datenew").innerText = datenew;
       document.getElementById("datenew").textContent = datenew;
