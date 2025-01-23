@@ -4,7 +4,7 @@
     <base target="_top">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ระบบอนุมัติ</title>
+    <title>ระบบจองรถ</title>
     <link rel="shortcut icon" href="https://pngimg.com/d/porsche_PNG10622.png" sizes="16x16 32x32 64x64" />
     <link rel="apple-touch-icon" href="https://pngimg.com/d/porsche_PNG10622.png" sizes="180x180" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,11 +19,14 @@
     </style>
 </head>
 <body>
-    <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://script.google.com/macros/s/AKfycbz7lYRwNs5x75CLl9t4qz54bO1PpwFXkNDmlg_02Zt61ePR6bUE94q1LRZlTD-LyJxK/exec" loading="lazy" align="center"></iframe>
+    <!-- iframe -->
+    <iframe id="myIframe" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://script.google.com/macros/s/AKfycbz7lYRwNs5x75CLl9t4qz54bO1PpwFXkNDmlg_02Zt61ePR6bUE94q1LRZlTD-LyJxK/exec" align="center"></iframe>
+
     <script>
+        // ตั้งค่า LoadingOverlay
         $.LoadingOverlaySetup({
             background: "#0d6efd",
-            text: "ระบบอนุมัติ",
+            text: "ระบบจองรถ",
             textColor: "#ffffff",
             textResizeFactor: "0.50",
             size: "20",
@@ -31,12 +34,21 @@
             minSize: "20",
             imageColor: "#ffffff"
         });
+
+        // แสดง LoadingOverlay เมื่อหน้าเว็บเริ่มโหลด
         $.LoadingOverlay("show");
 
-        // Hide it after 3 seconds
-        setTimeout(function(){
+        // ตรวจสอบเมื่อ iframe โหลดเสร็จ
+        document.getElementById("myIframe").onload = function() {
+            // ซ่อน LoadingOverlay เมื่อ iframe โหลดเสร็จ
             $.LoadingOverlay("hide");
-        }, 3000);
+        };
+
+        // หากมีข้อผิดพลาดในการโหลด iframe
+        document.getElementById("myIframe").onerror = function() {
+            $.LoadingOverlay("hide");
+            alert("เกิดข้อผิดพลาดในการโหลดหน้าเว็บ");
+        };
     </script>
 </body>
 </html>
