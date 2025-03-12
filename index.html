@@ -1413,10 +1413,9 @@ function openAddDataModal(selectedDate = '') {
 
 
 function closeModal() {
-    document.getElementById("modal").classList.add("hidden");
-    document.getElementById('calendarpage').hide()
-    document.getElementById('edit-form').reset()
-    updateCalendar()
+     document.getElementById("modal").classList.add("hidden");
+  $("#calendarpage").hide();
+  updateCalendar()
  
 }
 
