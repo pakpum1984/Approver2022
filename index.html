@@ -290,11 +290,11 @@
           </div>
           <div class="form-group">
             <label class="block text-sm font-medium text-gray-700">วันที่ออก</label>
-            <input type="date" id="edit-startDate" name="startDate" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300 text-blue-600" disabled>
+            <input type="date" id="edit-startDate" name="startDate" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300 text-blue-600 pointer-events-none" disabled>
           </div>
           <div class="form-group">
             <label class="block text-sm font-medium text-gray-700">วันที่เข้า</label>
-            <input type="date" id="edit-endDate" name="endDate" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300 text-blue-600">
+            <input type="date" id="edit-endDate" name="endDate" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300 text-blue-600 pointer-events-none">
           </div>
           <div class="form-group">
             <label class="block text-sm font-medium text-gray-700">เวลาเริ่มต้น</label>
@@ -1659,9 +1659,8 @@ function booksubmitForm() {
       
  
       
+      
 function showEventModal(event) {
-  
-
     const modal = document.getElementById('event-modal');
 
     // เติมค่าลงในฟอร์ม
@@ -1677,9 +1676,10 @@ function showEventModal(event) {
     document.getElementById('edit-status').value = event.status || '';
     document.getElementById('edit-other').value = event.other || '';
 
-    // เพิ่ม Event Listener สำหรับฟอร์มแก้ไขข้อมูล
     const editForm = document.getElementById('edit-form');
-    editForm.addEventListener('submit', async (e) => {
+
+    // ลบ Event Listener เก่าทั้งหมดก่อนเพิ่มใหม่
+    const newSubmitHandler = async (e) => {
         e.preventDefault();
 
         Swal.fire({
@@ -1689,9 +1689,8 @@ function showEventModal(event) {
         });
         Swal.showLoading();
 
-        var editnamedrivestatus2 = document.getElementById('edit-driver').value.trim(); // ใช้ trim() เพื่อลบช่องว่างเกิน
+        var editnamedrivestatus2 = document.getElementById('edit-driver').value.trim();
 
-        // ถ้าไม่ใช่ "ภาคภูมิ เรือนมูล" และกรอก "พร้อมคนขับ" ให้แสดงแจ้งเตือน
         if (editnamedrivestatus2 === "พร้อมคนขับ") {
             Swal.fire({
                 position: 'center',
@@ -1703,11 +1702,10 @@ function showEventModal(event) {
             return;
         }
 
-        const googleScriptUrledit = "https://script.google.com/macros/s/AKfycby9dFtE0zT6QlLidLwCtcBVFtmbL3j43JoQIinNbjeAAxFQ_4Kx5amDp335sEhmgTJFWQ/exec"; // แทนที่ YOUR_SCRIPT_ID ด้วย Google Apps Script ของคุณ
+        const googleScriptUrledit = "https://script.google.com/macros/s/AKfycby9dFtE0zT6QlLidLwCtcBVFtmbL3j43JoQIinNbjeAAxFQ_4Kx5amDp335sEhmgTJFWQ/exec";
 
-        // สร้าง FormData
         const formData = new FormData();
-        formData.append('action', 'update'); // ระบุ Action ว่าเป็นการอัปเดต
+        formData.append('action', 'update');
         formData.append('id', event.id);
         formData.append('name', document.getElementById('edit-name').value);
         formData.append('department', document.getElementById('edit-dep').value);
@@ -1737,9 +1735,9 @@ function showEventModal(event) {
                     showConfirmButton: false,
                     timer: 1500
                 }).then(() => {
-                  document.getElementById('edit-form').reset()
+                    document.getElementById('edit-form').reset();
                     closeEventModal();
-                    location.reload(); // รีเฟรชหน้าเพื่อโหลดข้อมูลใหม่
+                    location.reload();
                 });
             } else {
                 Swal.fire({
@@ -1758,12 +1756,17 @@ function showEventModal(event) {
                 text: error.message
             });
         }
-    });
+    };
+
+    // ลบ Event Listener เดิมก่อนเพิ่มใหม่
+    editForm.removeEventListener('submit', editForm.submitHandler);
+    editForm.submitHandler = newSubmitHandler; // เก็บ handler ใหม่ไว้ในตัวแปรของฟอร์ม
+    editForm.addEventListener('submit', newSubmitHandler);
 
     // แสดง Modal
     modal.classList.remove('hidden');
 }
-      
+
                // ฟังก์ชันปิด Modal แก้ไขข้อมูล
     function closeEventModal() {
       const modal = document.getElementById('modal');
