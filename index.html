@@ -636,9 +636,9 @@ document.addEventListener('keydown', function(event) {
 function fetchNames() {
   // ดึงค่า statuslogin จาก localStorage
   const statusLogin = localStorage.getItem("statuslogin");
-
+var googleScriptCar = 'https://script.google.com/macros/s/AKfycbyyhPanSdQPBRFx5QpCbNtJm4WYRdhumqsVQqxHwFMh4j42L2fMCnCOcD8uoU42cs0C/exec'; 
   // เรียก Google Apps Script เพื่อดึงข้อมูล
-  fetch('https://script.google.com/macros/s/AKfycbyyhPanSdQPBRFx5QpCbNtJm4WYRdhumqsVQqxHwFMh4j42L2fMCnCOcD8uoU42cs0C/exec')
+  fetch(googleScriptCar)
     .then(response => response.json())
     .then(data => {
       const carSelect = document.getElementById('namecar');  // <select>
@@ -1071,16 +1071,6 @@ function deepCompare(a, b) {
         }
     });
 },
-          dayRender: function(date, cell) {
-    const today = moment().format('YYYY-MM-DD'); // วันที่ปัจจุบันในฟอร์แมตเดียวกับ FullCalendar
-    if (date.format('YYYY-MM-DD') === today) {
-        cell.css({
-            //'border': '3px solid #ff5722', // สีเส้นขอบ (ส้ม) และความหนาของเส้นขอบ
-          'background-color': '#FFDEAD',
-            'border-radius': '5px' // ขอบมน
-        });
-    }
-},
 eventClick: function(event) {
     showDateOptions(event.start.format('YYYY-MM-DD'), true, event.status);
 },
@@ -1414,9 +1404,10 @@ function openAddDataModal(selectedDate = '') {
 
 function closeModal() {
     document.getElementById("modal").classList.add("hidden");
-  $("#calendarpage").hide();
-  updateCalendar()
-  //updateCalendar();
+    document.getElementById('calendarpage').hide()
+    document.getElementById('edit-form').reset()
+    updateCalendar()
+ 
 }
 
           // ฟังก์ชันปิด Modal แก้ไขข้อมูล
@@ -1746,6 +1737,7 @@ function showEventModal(event) {
                     showConfirmButton: false,
                     timer: 1500
                 }).then(() => {
+                  document.getElementById('edit-form').reset()
                     closeEventModal();
                     location.reload(); // รีเฟรชหน้าเพื่อโหลดข้อมูลใหม่
                 });
